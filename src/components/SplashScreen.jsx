@@ -7,14 +7,14 @@ export default function SplashScreen({ onComplete }) {
     const timer = setTimeout(() => {
       setHiding(true)
       setTimeout(onComplete, 600)
-    }, 4200)
+    }, 10000)
     return () => clearTimeout(timer)
   }, [])
 
   return (
     <div style={{
       position: 'fixed', inset: 0, zIndex: 9999,
-      background: '#0A0A0F',
+      background: '#FFFFFF',
       display: 'flex', flexDirection: 'column',
       alignItems: 'center', justifyContent: 'center',
       opacity: hiding ? 0 : 1,
@@ -24,14 +24,14 @@ export default function SplashScreen({ onComplete }) {
       {/* Purple glow behind image */}
       <div style={{
         position: 'absolute', width: 500, height: 500, borderRadius: '50%',
-        background: 'radial-gradient(circle, rgba(123,97,255,0.15) 0%, transparent 70%)',
+        background: 'radial-gradient(circle, rgba(123,97,255,0.08) 0%, transparent 70%)',
         top: '50%', left: '50%', transform: 'translate(-50%, -60%)',
         pointerEvents: 'none'
       }} />
 
       {/* The splash image you provided */}
       <img
-        src="/splash.png"
+        src="/splash.jpg"
         alt="MeshClip"
         style={{
           width: 280,
@@ -59,7 +59,7 @@ export default function SplashScreen({ onComplete }) {
       <div style={{
         position: 'absolute', bottom: 40,
         fontFamily: 'Georgia, serif', fontStyle: 'italic',
-        fontSize: 14, color: 'rgba(255,255,255,0.3)', letterSpacing: 0.5,
+        fontSize: 14, color: 'rgba(0,0,0,0.35)', letterSpacing: 0.5,
         overflow: 'hidden', whiteSpace: 'nowrap',
         borderRight: '2px solid rgba(123,97,255,0.6)',
         animation: 'mcType 1.8s steps(20,end) 1.6s both, mcBlink 0.75s step-end 3.4s 4'
