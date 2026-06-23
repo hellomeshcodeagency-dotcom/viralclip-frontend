@@ -31,7 +31,7 @@ export default function SplashScreen({ onComplete }) {
 
       {/* The splash image you provided */}
       <img
-        src="/splash.jpg"
+        src="/splash.jpeg"
         alt="MeshClip"
         style={{
           width: 280,
