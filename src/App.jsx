@@ -1,9 +1,11 @@
+import { useState } from 'react'
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import Home from './pages/Home.jsx'
 import Studio from './pages/Studio.jsx'
 import Result from './pages/Result.jsx'
 import History from './pages/History.jsx'
 import Pricing from './pages/Pricing.jsx'
+import SplashScreen from './components/SplashScreen.jsx'
 import './index.css'
 
 function AppRoutes() {
@@ -25,9 +27,14 @@ function AppRoutes() {
 }
 
 export default function App() {
+  const [showSplash, setShowSplash] = useState(true)
+
   return (
-    <BrowserRouter>
-      <AppRoutes />
-    </BrowserRouter>
+    <>
+      {showSplash && <SplashScreen onComplete={() => setShowSplash(false)} />}
+      <BrowserRouter>
+        <AppRoutes />
+      </BrowserRouter>
+    </>
   )
 }
